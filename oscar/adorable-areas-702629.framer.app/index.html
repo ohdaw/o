@@ -4526,25 +4526,6 @@
       <div class="framer-7kZLh" id="overlay"></div>
       <!--/$-->
     </div>
-    <script>
-      (() => {
-        function i() {
-          for (let e of document.querySelectorAll(
-            "[data-framer-original-sizes]"
-          )) {
-            let t = e.getAttribute("data-framer-original-sizes");
-            t === "" ? e.removeAttribute("sizes") : e.setAttribute("sizes", t),
-              e.removeAttribute("data-framer-original-sizes");
-          }
-        }
-        function a() {
-          window.__framer_onRewriteBreakpoints = i;
-        }
-        return a;
-      })()();
-    </script>
-
-    <div id="__framer-badge-container"></div>
     <script data-framer-appear-animation="no-preference"></script>
     <script
       type="module"
