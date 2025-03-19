@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>oscar®</title>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f8ff;
+            position: relative;
+        }
+
+        #dog {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            user-select: none;
+        }
+</style>
+</head>
+<body>
+<img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=100&q=80" alt="Bouncing Dog" id="dog">
+
+<script>
+        const dog = document.getElementById('dog');
+
+        let posX = Math.random() * (window.innerWidth - 100);
+        let posY = Math.random() * (window.innerHeight - 100);
+
+        dog.style.left = posX + 'px';
+        dog.style.top = posY + 'px';
+
+        let velocityX = 2;
+        let velocityY = 2;
+
+        function bounce() {
+            posX += velocityX;
+            posY += velocityY;
+
+            if (posX + dog.clientWidth >= window.innerWidth || posX <= 0) {
+                velocityX = -velocityX;
+            }
+            if (posY + dog.clientHeight >= window.innerHeight || posY <= 0) {
+                velocityY = -velocityY;
+            }
+
+            dog.style.left = posX + 'px';
+            dog.style.top = posY + 'px';
+
+            requestAnimationFrame(bounce);
+        }
+
+        bounce();
+
+        window.addEventListener('resize', () => {
+            if (posX + dog.clientWidth > window.innerWidth) {
+                posX = window.innerWidth - dog.clientWidth;
+            }
+            if (posY + dog.clientHeight > window.innerHeight) {
+                posY = window.innerHeight - dog.clientHeight;
+            }
+        });
+</script>
+</body>
+</html>
