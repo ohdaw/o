@@ -14,6 +14,9 @@
             height: 100%;
             background-color: #f0f8ff;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #dog {
@@ -22,9 +25,24 @@
             height: auto;
             user-select: none;
         }
+
+        #contact-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px; /* MASSIVE text */
+            font-family: Arial, sans-serif;
+            color: #1a1a2e;
+            text-decoration: none;
+            font-weight: bold;
+        }
 </style>
 </head>
 <body>
+
+<a href="mailto:contact@oscr.gg" id="contact-btn">contact@oscr.gg</a>
+
 <img src="https://i.pinimg.com/236x/18/8c/a7/188ca7f03d2282765b57fb602f1a7235.jpg" alt="Bouncing Kangaroo" id="dog">
 
 <script>
@@ -67,5 +85,6 @@
             }
         });
 </script>
+
 </body>
 </html>
